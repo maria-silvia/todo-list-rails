@@ -1,3 +1,26 @@
-<li class="">
-  <%= todo.name %>
+<li style="display: flex;">
+  <span style="padding: 3px">
+    <% if todo.complete? %>
+      <del> <%= todo.name %> </del>
+    <% else %>
+      <%= todo.name %> 
+    <% end %>
+  </span>
+
+  <div class="col col-sm-1">
+    <% if todo.incomplete? %>
+        <%= button_to todo_path(todo, todo: { status: 'complete' }), method: :patch, class: "bg-success text-white" do%>
+            <span> TOGGLE </<span>
+        <% end %>
+    <% else %>
+        <%= button_to todo_path(todo, todo: { status: 'incomplete' }), method: :patch, class: "bg-success text-white" do%>
+        <span> TOGGLE </<span>
+        <% end %>
+    <% end %>
+  </div>
+
+
+  <%= button_to todo, method: :delete, style: "background-color:red" do%>
+    <span> deletar </<span>
+  <% end %>
 </li>
