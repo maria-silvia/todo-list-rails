@@ -1,9 +1,17 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  name: MyString
-  status: 1
+  name: Lavar louca
+  status: 0
 
 two:
-  name: MyString
+  name: Um exemplo comecando com status 1
   status: 1
+
+name_empty:
+  name:
+  status: 1
+
+status_empty:
+  name: exemplo sem status
+  status:
